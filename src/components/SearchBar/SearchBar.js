@@ -5,7 +5,7 @@ const sortByOptions = {
     "Best Match": "best_match",
     "Highest Rated": "rating",
     "Most Reviewed": "review_count"
-}
+};
 
 const SearchBar = ({ searchYelp }) => {
     const [term, setTerm] = useState('');
@@ -36,22 +36,22 @@ const SearchBar = ({ searchYelp }) => {
         searchYelp(term, location, sortBy);
     };
 
-    function renderSortByOptions() {
+    const renderSortByOptions = () => {
         return Object.keys(sortByOptions).map((sortByOption) => {
             let sortByOptionValue = sortByOptions[sortByOption];
             return (
                 <li 
-                className={getSortByClass(sortByOptionValue)}
-                key={sortByOptionValue}
-                onClick={() => {
-                    handleSortByChange(sortByOptionValue);
-                }}
+                    className={getSortByClass(sortByOptionValue)}
+                    key={sortByOptionValue}
+                    onClick={() => {
+                        handleSortByChange(sortByOptionValue);
+                    }}
                 >
-                {sortByOption}
+                    {sortByOption}
                 </li>
             );
-        })  
-      };
+        });  
+    };
     
 
 
@@ -70,7 +70,7 @@ const SearchBar = ({ searchYelp }) => {
                 </div>
             </form>
         </div>
-    )
-}
+    );
+};
 
 export default SearchBar;
