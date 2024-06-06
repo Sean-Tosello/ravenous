@@ -23,6 +23,8 @@ input:focus {
 
 .App {
   font-family: "Work Sans", sans-serif;
+  background-color: #cca353;
+  height: 100vh;
 }
 
 .App h1 {
