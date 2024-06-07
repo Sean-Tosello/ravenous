@@ -33,7 +33,12 @@ const SearchBar = ({ searchYelp }) => {
 
     const handleSearch = (event) => {
         event.preventDefault();
-        searchYelp(term, location, sortBy);
+        if (!term || !location) {
+            return alert('Please enter a search term and location');
+        } else {
+            searchYelp(term, location, sortBy);
+        }
+        
     };
 
     const renderSortByOptions = () => {
@@ -53,8 +58,6 @@ const SearchBar = ({ searchYelp }) => {
         });  
     };
     
-
-
     return (
         <div className={styles.SearchBar}>
             <div className={styles.SearchBarSortOptions}>
